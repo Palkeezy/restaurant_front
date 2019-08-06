@@ -1,0 +1,9 @@
+<div>login form</div>
+
+<form #loginForm="ngForm" (ngSubmit)="logUser(loginUser)">
+  <input type="email" name="email" required [(ngModel)]="loginUser.email" placeholder="test@email.com"><br>
+  <input type="password" name="password" required [(ngModel)]="loginUser.password" placeholder="password"><br>
+  <button [disabled]="loginForm.invalid">Login</button>
+</form>
+
+<a routerLink="/register">register if you dont have acc</a>
