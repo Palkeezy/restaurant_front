@@ -1,7 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {LoginModel} from '../../models/LoginModel';
 import {AuthService} from '../../services/auth.service';
 import {API_Response} from '../../interfaces/API_Response';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,10 +10,9 @@ import {API_Response} from '../../interfaces/API_Response';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
   loginUser: LoginModel = new LoginModel();
-
-  constructor(private auth: AuthService) {
+  constructor(private auth: AuthService,
+              private router: Router) {
   }
 
   ngOnInit() {
@@ -20,10 +20,10 @@ export class LoginComponent implements OnInit {
 
 
   logUser(user: LoginModel) {
-    console.log(user);
     this.auth.logUser(user).subscribe((data: API_Response) => {
-      console.log(data.msg);
       localStorage.setItem('token', `${data.msg}`);
+      console.log(data.msg);
     });
+    this.router.navigate(['restaurants']);
   }
 }

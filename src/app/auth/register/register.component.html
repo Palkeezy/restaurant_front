@@ -1,12 +1,12 @@
 <div>register form</div>
 
-<form #registerForm="ngForm">
+<form #registerForm="ngForm" (ngSubmit)="regUser(registerUser)">
   <input type="text" name="username" required [(ngModel)]="registerUser.username" placeholder="username"><br>
   <input type="text" name="surname" required [(ngModel)]="registerUser.surname" placeholder="surname"><br>
   <input type="email" name="email" required [(ngModel)]="registerUser.email" placeholder="test@email.com"><br>
   <input type="password" name="password" required [(ngModel)]="registerUser.password" placeholder="password"><br>
   <input type="checkbox" name="role" (change)="change()" ngModel>as a restaurant?<br>
-  <button (click)="test()" [disabled]="registerForm.invalid">Register</button>
+  <button [disabled]="registerForm.invalid">Register</button>
 </form>
 
-<a routerLink="/login">have acc yet? Login</a>
+<a routerLink="/auth/login">have acc yet? Login</a>

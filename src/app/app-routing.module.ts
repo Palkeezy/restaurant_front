@@ -1,17 +1,11 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import {AuthComponent} from './auth/auth.component';
-import {LoginComponent} from './auth/login/login.component';
-import {RegisterComponent} from './auth/register/register.component';
-import {RestaurantComponent} from './restaurant/restaurant.component';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+
 
 const routes: Routes = [
-  {path: '', redirectTo: 'register', pathMatch: 'full'},
-  {path: '', component: AuthComponent, children: [
-      {path: 'login', component: LoginComponent},
-      {path: 'register', component: RegisterComponent}
-    ]},
-  {path: 'restaurants', component: RestaurantComponent}
+  {path: '', redirectTo: '/auth/register', pathMatch: 'full'},
+  {path: 'auth', loadChildren: './auth/auth.module#AuthModule'},
+  {path: 'restaurants', loadChildren: './restaurants/restaurants.module#RestaurantsModule'},
 ];
 
 @NgModule({

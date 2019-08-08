@@ -7,10 +7,15 @@ import {Hosts} from '../enums/hosts';
 })
 export class AuthService {
 
+
   constructor(private http: HttpClient) {
   }
 
   logUser(user) {
     return this.http.post(`${Hosts.API_HOST}/auth`, {email: user.email, password: user.password});
+  }
+
+  regUser(user) {
+    return this.http.post(`${Hosts.API_HOST}/user`, user);
   }
 }

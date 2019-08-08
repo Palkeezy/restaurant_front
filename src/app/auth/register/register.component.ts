@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {RegisterModel} from '../../models/RegisterModel';
 import {Roles} from '../../enums/roles';
+import {AuthService} from '../../services/auth.service';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -12,20 +14,26 @@ export class RegisterComponent implements OnInit {
   check: boolean;
   registerUser: RegisterModel = new RegisterModel();
 
-  constructor() {
+  constructor(private auth: AuthService,
+              private router: Router) {
   }
 
   ngOnInit() {
   }
 
-  test() {
-    if (this.check) {
-      this.registerUser.role = Roles.Restaurant;
-    }
-    console.log(this.registerUser);
-  }
-
   change() {
     this.check = !this.check;
+  }
+
+  regUser(registerUser: RegisterModel) {
+    if (this.check) {
+      registerUser.role = Roles.Restaurant;
+    } else {
+      registerUser.role = Roles.Client;
+    }
+    this.auth.regUser(registerUser).subscribe((data) => {
+    });
+
+    this.router.navigate(['login']);
   }
 }
