@@ -23,7 +23,9 @@ export class LoginComponent implements OnInit {
     this.auth.logUser(user).subscribe((data: API_Response) => {
       localStorage.setItem('token', `${data.msg}`);
       console.log(data.msg);
+      if (data.success) {
+        this.router.navigate(['restaurants']);
+      }
     });
-    this.router.navigate(['restaurants']);
   }
 }

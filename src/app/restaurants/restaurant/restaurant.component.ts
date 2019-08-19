@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {RestaurantsService} from '../../services/restaurants.service';
 
 @Component({
@@ -8,12 +8,13 @@ import {RestaurantsService} from '../../services/restaurants.service';
 })
 export class RestaurantComponent implements OnInit {
 
-  constructor(public restaurant: RestaurantsService) {
+  @Input() restaurantInput;
+
+
+  constructor() {
   }
 
   ngOnInit() {
-    this.restaurant.getRestaurants().subscribe((res) => {
-    });
-  }
 
+  }
 }

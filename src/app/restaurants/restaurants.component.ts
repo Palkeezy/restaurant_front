@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {RestaurantsService} from '../services/restaurants.service';
 
 @Component({
   selector: 'app-restaurants',
@@ -6,10 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./restaurants.component.css']
 })
 export class RestaurantsComponent implements OnInit {
+  restaurants;
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(public restaurant: RestaurantsService) {
   }
 
+  ngOnInit() {
+    this.getRestaurants();
+  }
+
+  getRestaurants() {
+    this.restaurant.getRestaurants().subscribe((res) => {
+      this.restaurants = res.msg;
+    });
+  }
 }

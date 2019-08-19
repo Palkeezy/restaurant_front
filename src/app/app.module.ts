@@ -7,6 +7,7 @@ import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {AuthModule} from './auth/auth.module';
 import {RestaurantsModule} from './restaurants/restaurants.module';
+import {AdminModule} from './admin/admin.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {RestaurantsModule} from './restaurants/restaurants.module';
     FormsModule,
     HttpClientModule,
     AuthModule,
-    RestaurantsModule
+    RestaurantsModule,
+    AdminModule
   ],
   providers: [],
   bootstrap: [AppComponent]

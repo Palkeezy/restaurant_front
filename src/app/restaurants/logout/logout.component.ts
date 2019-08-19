@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router, RouterModule} from '@angular/router';
 
 @Component({
@@ -9,12 +9,12 @@ import {Router, RouterModule} from '@angular/router';
 export class LogoutComponent implements OnInit {
   isTokenPresent: any;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {
+  }
 
   ngOnInit() {
     this.isTokenPresent = !!localStorage.getItem('token');
   }
-
   logout() {
     localStorage.removeItem('token');
     this.isTokenPresent = false;

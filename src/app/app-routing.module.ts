@@ -6,6 +6,7 @@ const routes: Routes = [
   {path: '', redirectTo: '/auth/register', pathMatch: 'full'},
   {path: 'auth', loadChildren: './auth/auth.module#AuthModule'},
   {path: 'restaurants', loadChildren: './restaurants/restaurants.module#RestaurantsModule'},
+  {path: 'admin', loadChildren: './admin/admin.module#AdminModule'}
 ];
 
 @NgModule({

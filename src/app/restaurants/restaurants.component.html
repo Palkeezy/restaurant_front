@@ -4,6 +4,6 @@
 
 <app-cart></app-cart>
 
-<app-restaurant></app-restaurant>
+<app-restaurant *ngFor="let restaurant of restaurants" [restaurantInput]="restaurant"></app-restaurant>
 
 <app-user></app-user>
