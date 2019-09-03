@@ -1,12 +1,47 @@
-<div>register form</div>
+<div>REGISTRATION</div>
 
-<form #registerForm="ngForm" (ngSubmit)="regUser(registerUser)">
-  <input type="text" name="username" required [(ngModel)]="registerUser.username" placeholder="username"><br>
-  <input type="text" name="surname" required [(ngModel)]="registerUser.surname" placeholder="surname"><br>
-  <input type="email" name="email" required [(ngModel)]="registerUser.email" placeholder="test@email.com"><br>
-  <input type="password" name="password" required [(ngModel)]="registerUser.password" placeholder="password"><br>
-  <input type="checkbox" name="role" (change)="change()" ngModel>as a restaurant?<br>
-  <button [disabled]="registerForm.invalid">Register</button>
+<form class="register-form" #registerForm="ngForm" (ngSubmit)="regUser(registerUser)">
+  <mat-form-field class="example-full-width">
+    <input matInput
+           required
+           [(ngModel)]="registerUser.username"
+           name="username"
+           placeholder="username">
+  </mat-form-field>
+  <br>
+  <mat-form-field class="example-full-width">
+    <input
+      matInput
+      required
+      [(ngModel)]="registerUser.surname"
+      name="surname"
+      placeholder="surname">
+  </mat-form-field>
+  <br>
+  <mat-form-field class="example-full-width">
+    <input matInput
+           placeholder="Enter your email"
+           name="email"
+           [formControl]="email"
+           [(ngModel)]="registerUser.email"
+           required>
+    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput
+           placeholder="Enter your password"
+           name="password"
+           required
+           [(ngModel)]="registerUser.password"
+           [type]="hide ? 'password' : 'text'">
+  </mat-form-field>
+  <br>
+  <mat-checkbox class="example-margin"
+                name="role"
+                (change)="change()"
+                ngModel>As a manager?
+  </mat-checkbox>
+  <br>
+  <button mat-raised-button color="accent" [disabled]="registerForm.invalid">Register</button>
 </form>
-
-<a routerLink="/auth/login">have acc yet? Login</a>
+<a mat-raised-button routerLink="/auth/login">have acc yet? Login</a>

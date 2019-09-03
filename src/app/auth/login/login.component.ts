@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
               private router: Router) {
   }
 
+  hide = true;
   ngOnInit() {
   }
 

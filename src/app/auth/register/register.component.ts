@@ -3,6 +3,7 @@ import {RegisterModel} from '../../models/RegisterModel';
 import {Roles} from '../../enums/roles';
 import {AuthService} from '../../services/auth.service';
 import {Router} from '@angular/router';
+import {FormControl, Validators} from '@angular/forms';
 
 
 @Component({
@@ -13,6 +14,14 @@ import {Router} from '@angular/router';
 export class RegisterComponent implements OnInit {
   check: boolean;
   registerUser: RegisterModel = new RegisterModel();
+  hide = true;
+  email = new FormControl('', [Validators.required, Validators.email]);
+
+  getErrorMessage() {
+    return this.email.hasError('required') ? 'You must enter a value' :
+      this.email.hasError('email') ? 'Not a valid email' :
+        '';
+  }
 
   constructor(private auth: AuthService,
               private router: Router) {

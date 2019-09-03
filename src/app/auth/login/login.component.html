@@ -1,9 +1,21 @@
-<div>login form</div>
+<div>LOGIN</div>
 
-<form #loginForm="ngForm" (ngSubmit)="logUser(loginUser)">
-  <input type="email" name="email" required [(ngModel)]="loginUser.email" placeholder="test@email.com"><br>
-  <input type="password" name="password" required [(ngModel)]="loginUser.password" placeholder="password"><br>
-  <button [disabled]="loginForm.invalid">Login</button>
+<form class="login-form" #loginForm="ngForm" (ngSubmit)="logUser(loginUser)">
+  <mat-form-field class="example-full-width">
+    <input matInput
+           required
+           [(ngModel)]="loginUser.email"
+           name="email"
+           placeholder="test@email.com">
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput
+           placeholder="Enter your password"
+           name="password"
+           required
+           [(ngModel)]="loginUser.password"
+           [type]="hide ? 'password' : 'text'">
+  </mat-form-field><br>
+  <button mat-raised-button color="accent" [disabled]="loginForm.invalid">Login</button>
 </form>
-
-<a routerLink="/auth/register">register if you dont have acc</a>
+<a mat-raised-button routerLink="/auth/register">If you dont have acc</a>

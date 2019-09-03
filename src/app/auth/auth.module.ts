@@ -6,6 +6,7 @@ import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {AuthComponent} from './auth.component';
 import {RouterModule, Routes} from '@angular/router';
+import {MaterialModuleModule} from '../material-module.module';
 
 const routes: Routes = [
   {path: '', redirectTo: '/auth/register', pathMatch: 'full'},
@@ -29,7 +30,8 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    MaterialModuleModule
   ],
   exports: [
     AuthComponent,
