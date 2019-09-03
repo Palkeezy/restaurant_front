@@ -1,0 +1,11 @@
+<br>
+<button routerLink="stat">stat</button>
+
+<button routerLink="cart">CART</button>
+
+<app-restaurant *ngFor="let restaurant of restaurants" [restaurantInput]="restaurant"></app-restaurant>
+
+
+
+<router-outlet></router-outlet>
+

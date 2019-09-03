@@ -7,11 +7,14 @@ import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {AuthModule} from './auth/auth.module';
 import {RestaurantsModule} from './restaurants/restaurants.module';
-import {AdminModule} from './admin/admin.module';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MaterialModuleModule} from './material-module.module';
 
 @NgModule({
   declarations: [
     AppComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -20,7 +23,8 @@ import {AdminModule} from './admin/admin.module';
     HttpClientModule,
     AuthModule,
     RestaurantsModule,
-    AdminModule
+    BrowserAnimationsModule,
+    MaterialModuleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
