@@ -6,6 +6,7 @@ import {AddDishesComponent} from './add-dishes/add-dishes.component';
 import {AddMenuComponent} from './add-menu/add-menu.component';
 import {AddRestaurantComponent} from './add-restaurant/add-restaurant.component';
 import { OrdersComponent } from './orders/orders.component';
+import {MaterialModuleModule} from '../../material-module.module';
 
 const routes: Routes = [
   {path: '', component: ManagerComponent, children: [
@@ -27,7 +28,8 @@ const routes: Routes = [
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    MaterialModuleModule
   ],
   exports: [
     ManagerComponent,

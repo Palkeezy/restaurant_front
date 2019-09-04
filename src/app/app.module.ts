@@ -6,10 +6,10 @@ import {AppComponent} from './app.component';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {AuthModule} from './auth/auth.module';
-import {RestaurantsModule} from './restaurants/restaurants.module';
-import { NotFoundComponent } from './not-found/not-found.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {NotFoundComponent} from './not-found/not-found.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MaterialModuleModule} from './material-module.module';
+import {PanelesModule} from './paneles/paneles.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,7 @@ import {MaterialModuleModule} from './material-module.module';
     FormsModule,
     HttpClientModule,
     AuthModule,
-    RestaurantsModule,
+    PanelesModule,
     BrowserAnimationsModule,
     MaterialModuleModule
   ],

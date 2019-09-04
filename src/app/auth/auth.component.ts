@@ -15,7 +15,7 @@ export class AuthComponent implements OnInit {
   ngOnInit() {
     this.getToken();
     if (this.isTokenPresent) {
-      this.router.navigate(['restaurants']);
+      this.router.navigate(['paneles/client']);
     }
   }
 

@@ -1,6 +1,6 @@
-<div>
-  <h2>{{restaurantInput.name}}</h2>
-  {{restaurantInput.address}}
-  {{restaurantInput.description}}
+<div *ngFor="let restaur of restaurants" class="restaurant">
+  <h2>{{restaur.name}}</h2>
+  {{restaur.address}}
+  {{restaur.description}}
+  <button mat-raised-button color="primary">Primary</button>
 </div>
-<button mat-raised-button color="primary">Primary</button>

@@ -11,7 +11,7 @@ import {TestGuard} from '../guards/test.guard';
 import { LogoutComponent } from './logout/logout.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'restaurants', pathMatch: 'full'},
+  {path: '', redirectTo: 'paneles', pathMatch: 'full'},
   {
     path: '', component: RestaurantsComponent, children: [
       {path: 'restaurant', component: RestaurantComponent},

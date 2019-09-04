@@ -1,9 +1,22 @@
-<br>
-<button routerLink="restaurants">add restaurant</button>
+<mat-toolbar color="primary">
+  <span routerLink="/paneles/manager">ManagerPanele</span>
+  <span class="example-spacer"></span>
+  <span>UserName</span>
+  <mat-icon class="example-icon" aria-hidden="false" aria-label="Example delete icon" (click)="logout()">exit_to_app</mat-icon>
+</mat-toolbar>
 
-<button routerLink="menu">add menu</button>
-
-<button routerLink="dishes">add dishes</button>
-
-<button routerLink="orders">orders</button>
-<router-outlet></router-outlet>
+<mat-drawer-container class="example-container">
+  <mat-drawer class="toolbar" mode="side" opened>
+    <button mat-stroked-button routerLink="restaurants">add restaurant</button>
+    <br>
+    <button mat-stroked-button routerLink="menu">add menu</button>
+    <br>
+    <button mat-stroked-button routerLink="dishes">add dishes</button>
+    <br>
+    <button mat-stroked-button routerLink="orders">orders</button>
+    <br>
+  </mat-drawer>
+  <mat-drawer-content>content
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>

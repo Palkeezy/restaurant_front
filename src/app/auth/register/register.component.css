@@ -15,4 +15,6 @@
 .example-button-row a {
   margin-right: 8px;
 }
-
+a {
+  color: white;
+}

@@ -7,7 +7,7 @@ const routes: Routes = [
   {path: '', redirectTo: '/auth/register', pathMatch: 'full'},
   {path: 'auth', loadChildren: './auth/auth.module#AuthModule'},
   {path: 'paneles', loadChildren: './paneles/paneles.module#PanelesModule'},
-  {path: 'restaurants', loadChildren: './restaurants/restaurants.module#RestaurantsModule'},
+  // {path: 'restaurants', loadChildren: './restaurants/restaurants.module#RestaurantsModule'},
   {path: '**', component: NotFoundComponent}
 ];
 

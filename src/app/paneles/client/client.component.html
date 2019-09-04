@@ -1,11 +1,17 @@
-<br>
-<button routerLink="stat">stat</button>
-
-<button routerLink="cart">CART</button>
-
-<app-restaurant *ngFor="let restaurant of restaurants" [restaurantInput]="restaurant"></app-restaurant>
-
-
-
-<router-outlet></router-outlet>
-
+<mat-toolbar color="primary">
+  <span routerLink="/paneles/client">ClientPanele</span>
+  <span class="example-spacer"></span>
+  <span>UserName</span>
+  <mat-icon class="example-icon" aria-hidden="false" routerLink="cart">local_grocery_store</mat-icon>
+  <mat-icon class="example-icon" aria-hidden="false">exit_to_app</mat-icon>
+</mat-toolbar>
+<mat-drawer-container class="example-container">
+  <mat-drawer class="toolbar" mode="side" opened>
+    <br>
+    <button mat-stroked-button routerLink="restaurant">restaurants</button><br>
+    <button mat-stroked-button routerLink="stat">stat</button>
+  </mat-drawer>
+  <mat-drawer-content>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>
